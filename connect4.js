@@ -1,6 +1,6 @@
 /*
 QUESTIONS:
-1. 
+1.  makeboard - when did we make the array for height?
 */
 
 
@@ -24,19 +24,19 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 function makeBoard() {
   /* TODO: set "board" to empty HEIGHT x WIDTH matrix array 
       - it should be dynamic and use the global variables for flexibility
-      - ARRAY.from() creates an array from an iterable object
+      - Array.from() creates an array from an iterable object
+      - length: sets an empty array with the allocated amonut of spaces
   */
   for (let y = 0; y < HEIGHT; y++){
     board.push(Array.from({length: WIDTH}))
   }
-
-
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+  let htmlBoard = document.getElementById("board");
 
   // TODO: add comment for this code
   let top = document.createElement("tr");
