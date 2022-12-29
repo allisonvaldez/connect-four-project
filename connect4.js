@@ -1,3 +1,9 @@
+/*
+QUESTIONS:
+1. 
+*/
+
+
 /** Connect Four
  *
  * Player 1 and 2 alternate turns. On each turn, a piece is dropped down a
@@ -16,7 +22,15 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  /* TODO: set "board" to empty HEIGHT x WIDTH matrix array 
+      - it should be dynamic and use the global variables for flexibility
+      - ARRAY.from() creates an array from an iterable object
+  */
+  for (let y = 0; y < HEIGHT; y++){
+    board.push(Array.from({length: WIDTH}))
+  }
+
+
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
