@@ -36,28 +36,53 @@ function makeBoard() {
 
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+  // this is in charge of making the board show up on the page
   let htmlBoard = document.getElementById("board");
 
   // TODO: add comment for this code
+  // creates a DOM table row element called top 
   let top = document.createElement("tr");
+
+  // sets the DOM element id attribute to column top (css features activated)
   top.setAttribute("id", "column-top");
+
+  /* 
+  sets up an eventListener when the DOM element is clicked to trigger the handleClick()
+  */
   top.addEventListener("click", handleClick);
 
+  // for loop to create board rows
   for (let x = 0; x < WIDTH; x++) {
+    // creates a DOM element for the table cell
     let headCell = document.createElement("td");
+
+    // sets the DOM element id attribute to x 
     headCell.setAttribute("id", x);
+
+    // appends the cell to the top row
     top.append(headCell);
   }
+
+  // appends the DOM element of the top row to the board (table)
   htmlBoard.append(top);
 
   // TODO: add comment for this code
+  // for loop for creating the rest of the board
   for (let y = 0; y < HEIGHT; y++) {
+    // creates a row for the table
     const row = document.createElement("tr");
+    // for loop for creating the cells for the rest of the table
     for (let x = 0; x < WIDTH; x++) {
+      // create the DOM element for the cell
       const cell = document.createElement("td");
+
+      // sets the attribute of the cell (based on location?)
       cell.setAttribute("id", `${y}-${x}`);
+
+      // appends the cell to the row
       row.append(cell);
     }
+    // appends the row to the board
     htmlBoard.append(row);
   }
 }
