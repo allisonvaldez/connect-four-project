@@ -98,6 +98,19 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  const gamePiece = document.createElement("div");
+
+  // put the class "piece" on gamePiece
+  gamePiece.classList.add("piece");
+
+  // put a class on the piece for who is currently playing
+  gamePiece.classList.add(`${currPlayer}`);
+  
+  // determines where to put the game piece on the board
+  const pieceSpot = document.getElementById(`${y} - ${x}`);
+
+  // places the piece spot on the table cell
+  pieceSpot.append(gamePiece);
 }
 
 /** endGame: announce game end */

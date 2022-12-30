@@ -13,9 +13,18 @@
   margin: 5px;
   width: 80%;
   height: 80%;
+  /* border-radius is in charge of making the game piece a circle */
+  border-radius: 50%;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.piece.player1 {
+  background-color: blue;
+}
+
+.piece.player2 {
+  background-color: red;
+}
 
 /* column-top is table row of clickable areas for each column */
 
