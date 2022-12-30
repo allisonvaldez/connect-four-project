@@ -133,6 +133,9 @@ function handleClick(evt) {
 
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
+
+  // this should update the board variable with the player number
+  htmlBoard[y][x] = currPlayer;
   placeInTable(y, x);
 
   // check for win
@@ -140,11 +143,17 @@ function handleClick(evt) {
     return endGame(`Player ${currPlayer} won!`);
   }
 
-  // check for tie
+  
   // TODO: check if all cells in board are filled; if so call, call endGame
+  // check for tie during gameplay
+  if (htmlBoard.every(row => row.every(cell => cell))) {
+    return endGame("It's a TIE!")
+  }
 
-  // switch players
+
   // TODO: switch currPlayer 1 <-> 2
+  // switch players during game play
+  currPlayer = currPlayer === 1 ? 2 : 1;
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
