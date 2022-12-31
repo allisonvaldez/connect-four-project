@@ -91,7 +91,7 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
@@ -116,7 +116,8 @@ function placeInTable(y, x) {
 /** endGame: announce game end */
 
 function endGame(msg) {
-  // TODO: pop up alert message
+  // TODO: pop up alert message when the game is finished
+  alert("The game is over!");
 }
 
 /** handleClick: handle click of column top to play piece */
